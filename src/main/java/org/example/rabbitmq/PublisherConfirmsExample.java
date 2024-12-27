@@ -26,6 +26,18 @@ public class PublisherConfirmsExample {
         return factory.newConnection();
     }
 
+    public static void main(String[] argv) throws Exception {
+
+        publishMessagesIndividually(false);
+        publishMessagesIndividually(true);
+        publishMessagesInBatch();
+        handlePublishConfirmsAsynchronously();
+
+        System.out.println("Done");
+
+    }
+
+
     static void publishMessagesIndividually(boolean isPubConfEnabled) throws Exception {
         try (Connection connection = createConnection())
         {
@@ -134,14 +146,5 @@ public class PublisherConfirmsExample {
         }
     }
 
-    public static void main(String[] argv) throws Exception {
 
-        publishMessagesIndividually(false);
-        publishMessagesIndividually(true);
-        publishMessagesInBatch();
-        handlePublishConfirmsAsynchronously();
-
-        System.out.println("Done");
-
-    }
 }

@@ -22,7 +22,7 @@ public class ConsistentHashPublish {
             //Channel ch1 = conn.createChannel();
            // Channel ch2 = conn.createChannel();
 
-            //Thread.sleep(30000L);
+            Thread.sleep(30000L);
 
             AMQP.BasicProperties.Builder bldr = new AMQP.BasicProperties.Builder();
             for (int i = 0; i < 100000000; i++) {
